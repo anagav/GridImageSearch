@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">GridImageSearch</string>
     <string name="configureButton">Profile</string>
+    <string name="searchTitle">Advanced Search Options</string>
+    <string name="ImageSize">Image Size</string>
+    <string-array name="sizeArray">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>)
+    </string-array>
 </resources>

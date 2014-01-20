@@ -17,7 +17,10 @@ public class GridImageSearchActivity extends Activity {
     }
 
     public void onProfileView(MenuItem item) {
-        Intent i  = new Intent(this.getClass(), ConfigurationActivity.class);
+
+        Intent i = new Intent(GridImageSearchActivity.this, ConfigurationActivity.class);
+        startActivity(i);
+
     }
 
 
