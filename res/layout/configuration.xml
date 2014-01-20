@@ -23,15 +23,68 @@
             android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"/>
     <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/spinner"
-            android:paddingBottom="@dimen/pt"
-            style="?android:attr/spinnerDropDownItemStyle"
+            android:gravity="right"
             android:layout_alignTop="@id/ImageSize"
             android:layout_alignBottom="@id/ImageSize"
             android:layout_toRightOf="@id/ImageSize"
             />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/ColorFilter"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ColorFilter"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ImageSize"/>
+    <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ColorSelect"
+            android:gravity="right"
+            android:layout_alignTop="@id/ColorFilter"
+            android:layout_alignBottom="@id/ColorFilter"
+            android:layout_toRightOf="@id/ColorFilter"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/imageType"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ImageType"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ColorFilter"/>
+    <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ImageSelect"
+            android:gravity="right"
+            android:layout_alignTop="@id/ImageType"
+            android:layout_alignBottom="@id/ImageType"
+            android:layout_toRightOf="@id/ImageType"
+            />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/siteFilter"
+            android:id="@+id/siteFilter"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ImageType"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_alignTop="@id/siteFilter"
+            android:layout_alignBottom="@id/siteFilter"
+            android:layout_toRightOf="@+id/siteFilter"/>
 
 
 </RelativeLayout>

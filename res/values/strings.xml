@@ -4,6 +4,9 @@
     <string name="configureButton">Profile</string>
     <string name="searchTitle">Advanced Search Options</string>
     <string name="ImageSize">Image Size</string>
+    <string name="ColorFilter">Color Filter</string>
+    <string name="imageType">Image Type</string>
+    <string name="siteFilter">Site Filter</string>
     <string-array name="sizeArray">
         <item>small</item>
         <item>medium</item>

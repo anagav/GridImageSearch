@@ -9,15 +9,23 @@ import android.widget.Spinner;
  * Created by ashishn on 1/19/14.
  */
 public class ConfigurationActivity extends Activity {
+    Spinner imageSize;
+    Spinner colorFilter;
+    Spinner imageType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configuration);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.sizeArray, android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        imageSize = (Spinner) findViewById(R.id.spinner);
+        colorFilter = (Spinner) findViewById(R.id.ColorFilter);
+        imageType = (Spinner) findViewById(R.id.ImageType);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                        this, R.array.sizeArray, R.layout.spinner_layout);
+        adapter.setDropDownViewResource(R.layout.spinner_layout);
+
+        imageSize.setAdapter(adapter);
     }
 }
