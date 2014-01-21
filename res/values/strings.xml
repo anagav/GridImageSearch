@@ -8,6 +8,7 @@
     <string name="imageTypeStaticString">Image Type</string>
     <string name="siteFilter">Site Filter</string>
     <string name="SearchButtonString">Search</string>
+    <string name="Save">Save</string>
     <string-array name="sizeArray">
         <item>small</item>
         <item>medium</item>

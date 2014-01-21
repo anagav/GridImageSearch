@@ -58,7 +58,7 @@ public class GridImageSearchActivity extends Activity {
                 + configuration.getStringExtra("imageTypeSelected") + "&imgsz="
                 + configuration.getStringExtra("imageSizeSelected")
                 + "&imgcolor=" + configuration.getStringExtra("colorSelected")
-                + "&as_sitesearch=" + configuration.getStringExtra("siteFilter"),
+                ,
                 new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(String response) {

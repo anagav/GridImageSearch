@@ -85,6 +85,16 @@
             android:layout_alignTop="@id/siteFilterStaticString"
             android:layout_alignBottom="@id/siteFilterStaticString"
             android:layout_toRightOf="@+id/siteFilterStaticString"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Save"
+            android:id="@+id/button"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="150dp"
+            android:onClick="getCongifuration"
+            android:layout_below="@id/siteFilterStaticString"
+            android:layout_alignParentLeft="true"/>
 
 
 </RelativeLayout>
