@@ -5,11 +5,26 @@
     <string name="searchTitle">Advanced Search Options</string>
     <string name="ImageSize">Image Size</string>
     <string name="ColorFilter">Color Filter</string>
-    <string name="imageType">Image Type</string>
+    <string name="imageTypeStaticString">Image Type</string>
     <string name="siteFilter">Site Filter</string>
+    <string name="SearchButtonString">Search</string>
     <string-array name="sizeArray">
         <item>small</item>
         <item>medium</item>
-        <item>large</item>)
+        <item>large</item>
+        <item>extra-large</item>
     </string-array>
+    <string-array name="colorArray">
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+        <item>black</item>
+        <item>brown</item>
+    </string-array>
+    <string-array name="typeArray">
+        <item>faces</item>
+        <item>clipart</item>
+        <item>line art</item>
+    </string-array>
+
 </resources>

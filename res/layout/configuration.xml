@@ -25,7 +25,7 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner"
+            android:id="@+id/imageSizeSpinner"
             android:gravity="right"
             android:layout_alignTop="@id/ImageSize"
             android:layout_alignBottom="@id/ImageSize"
@@ -44,7 +44,7 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ColorSelect"
+            android:id="@+id/colorSelectSpinner"
             android:gravity="right"
             android:layout_alignTop="@id/ColorFilter"
             android:layout_alignBottom="@id/ColorFilter"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/imageType"
+            android:text="@string/imageTypeStaticString"
             android:layout_marginTop="20dp"
             android:id="@+id/ImageType"
             android:layout_alignParentLeft="true"
@@ -63,7 +63,7 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ImageSelect"
+            android:id="@+id/imageSelectSpinner"
             android:gravity="right"
             android:layout_alignTop="@id/ImageType"
             android:layout_alignBottom="@id/ImageType"
@@ -74,17 +74,17 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/siteFilter"
-            android:id="@+id/siteFilter"
+            android:id="@+id/siteFilterStaticString"
             android:layout_marginTop="20dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@id/ImageType"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_alignTop="@id/siteFilter"
-            android:layout_alignBottom="@id/siteFilter"
-            android:layout_toRightOf="@+id/siteFilter"/>
+            android:id="@+id/siteFilter"
+            android:layout_alignTop="@id/siteFilterStaticString"
+            android:layout_alignBottom="@id/siteFilterStaticString"
+            android:layout_toRightOf="@+id/siteFilterStaticString"/>
 
 
 </RelativeLayout>
