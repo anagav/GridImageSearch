@@ -49,10 +49,12 @@ public class GridImageSearchActivity extends Activity {
     }
 
     private void customLoadMoreDataFromApi(int offset) {
+
+        System.out.println("offset="+offset);
         Object waitforResults = new Object();
         AsyncHttpClient client = new AsyncHttpClient();
 
-        RequestHandle requestHandle = client.get("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + searchBox.getText().toString()
+        RequestHandle requestHandle = client.get("https://ajax.googleapis.com/ajax/services/search/images?rsz=8&v=1.0&q=" + searchBox.getText().toString()
                 + "&start=" + offset, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String response) {
@@ -109,7 +111,7 @@ public class GridImageSearchActivity extends Activity {
             Toast.makeText(getBaseContext(), " Enter a Stirng", Toast.LENGTH_SHORT).show();
             return;
         }
-
+           imgAdapter.clear();
         customLoadMoreDataFromApi(0);
        /* AsyncHttpClient client = new AsyncHttpClient();
         final List<String> urls = new ArrayList<String>();

@@ -28,6 +28,11 @@
             android:id="@+id/searchResults"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/button"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:columnWidth="90dp"  android:stretchMode="columnWidth"
+            android:gravity="center"
             android:layout_alignParentBottom="true"/>
 </RelativeLayout>
 

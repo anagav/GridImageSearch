@@ -15,12 +15,19 @@ public class ImageAdapter extends BaseAdapter {
 
     ArrayList<String> mThumbIds;
 
+
+    public void clear() {
+        mThumbIds.clear();
+    }
+
+
     public ImageAdapter(Context c, ArrayList<String> urls) {
         mContext = c;
         mThumbIds = urls;
+
     }
 
-    public void setData(ArrayList<String> mThumbIds){
+    public void setData(ArrayList<String> mThumbIds) {
         this.mThumbIds = mThumbIds;
         this.notifyDataSetChanged();
     }
@@ -30,21 +37,21 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     public Object getItem(int position) {
-        return null;
+        return mThumbIds.get(position);
     }
 
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
-        if (convertView == null) {  // if it's not recycled, initialize some attributes
+        if (convertView == null) {
             imageView = new ImageView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
+            imageView.setPadding(5, 5, 5, 5);
         } else {
             imageView = (ImageView) convertView;
         }
@@ -54,4 +61,5 @@ public class ImageAdapter extends BaseAdapter {
         Picasso.with(mContext).load(mThumbIds.get(position)).into(imageView);
         return imageView;
     }
+
 }
