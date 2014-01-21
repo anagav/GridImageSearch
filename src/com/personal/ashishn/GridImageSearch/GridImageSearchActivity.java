@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class GridImageSearchActivity extends Activity {
     /**
@@ -29,7 +28,7 @@ public class GridImageSearchActivity extends Activity {
 
     EditText searchBox;
     GridView gridView;
-    ArrayList<String> results= new ArrayList<String>();
+    ArrayList<String> results = new ArrayList<String>();
     ImageAdapter imgAdapter = new ImageAdapter(this, results);
 
     @Override
@@ -50,50 +49,56 @@ public class GridImageSearchActivity extends Activity {
 
     private void customLoadMoreDataFromApi(int offset) {
 
-        System.out.println("offset="+offset);
+        System.out.println("offset=" + offset);
         Object waitforResults = new Object();
         AsyncHttpClient client = new AsyncHttpClient();
 
-        RequestHandle requestHandle = client.get("https://ajax.googleapis.com/ajax/services/search/images?rsz=8&v=1.0&q=" + searchBox.getText().toString()
-                + "&start=" + offset, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(String response) {
-                try {
-                    JSONArray json = new JSONObject(response).getJSONObject("responseData").getJSONArray("results");
-                    for (int i = 0; i < json.length(); i++) {
-                        String url = json.getJSONObject(i).getString("url");
-                        System.out.println("adding url " + url);
-                        results.add(url);
+        RequestHandle requestHandle = client.get("https://ajax.googleapis.com/ajax/services/search/images?rsz=8&v=1.0&q=" +
+                searchBox.getText().toString() + "&start=" + offset + "&imgtype="
+                + configuration.getStringExtra("imageTypeSelected") + "&imgsz="
+                + configuration.getStringExtra("imageSizeSelected")
+                + "&imgcolor=" + configuration.getStringExtra("colorSelected")
+                + "&as_sitesearch=" + configuration.getStringExtra("siteFilter"),
+                new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(String response) {
+                        try {
+                            JSONArray json = new JSONObject(response).getJSONObject("responseData").getJSONArray("results");
+                            for (int i = 0; i < json.length(); i++) {
+                                String url = json.getJSONObject(i).getString("url");
+                                System.out.println("adding url " + url);
+                                results.add(url);
+
+                            }
+
+
+                            imgAdapter.setData(results);
+
+
+                        } catch (JSONException e) {
+                            Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
 
                     }
 
-
-                } catch (JSONException e) {
-                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                        System.out.println("response=" + Arrays.toString(responseBody));
+                    }
                 }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                System.out.println("response=" + Arrays.toString(responseBody));
-            }
-        }
         );
-
-
-        while(!requestHandle.isFinished()){
-
-        }
-        imgAdapter.setData(results);
-
 
 
     }
 
+
+    Intent configuration = new Intent();
+
     public void onProfileView(MenuItem item) {
 
-        Intent i = new Intent(GridImageSearchActivity.this, ConfigurationActivity.class);
-        startActivity(i);
+        configuration = new Intent(GridImageSearchActivity.this, ConfigurationActivity.class);
+        startActivity(configuration);
 
     }
 
@@ -111,8 +116,9 @@ public class GridImageSearchActivity extends Activity {
             Toast.makeText(getBaseContext(), " Enter a Stirng", Toast.LENGTH_SHORT).show();
             return;
         }
-           imgAdapter.clear();
+        imgAdapter.clear();
         customLoadMoreDataFromApi(0);
+        customLoadMoreDataFromApi(30);
        /* AsyncHttpClient client = new AsyncHttpClient();
         final List<String> urls = new ArrayList<String>();
         client.get("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + searchBox.getText().toString(), new

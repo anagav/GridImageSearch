@@ -22,17 +22,24 @@
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/button"
             android:layout_alignParentTop="true"/>
-    <GridView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/searchResults"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/button"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="10dp"
-            android:horizontalSpacing="10dp"
-            android:columnWidth="90dp"  android:stretchMode="columnWidth"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"/>
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/searchResults"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:columnWidth="90dp"
+              android:numColumns="auto_fit"
+              android:verticalSpacing="5dp"
+              android:horizontalSpacing="5dp"
+              android:stretchMode="columnWidth"
+              android:gravity="center"
+              android:layout_alignParentLeft="true"
+              android:layout_below="@+id/button"
+              android:layout_alignParentBottom="true"
+
+
+            />
+
+
 </RelativeLayout>
 

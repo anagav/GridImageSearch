@@ -18,10 +18,10 @@ public class ConfigurationActivity extends Activity implements Serializable {
     Spinner imageType;
     EditText siteFilter;
 
-    String imageSizeSelected;
-    String colorSelected;
-    String imageTypeSelected;
-    String siteFilterSelected = "yahoo.com";
+    String imageSizeSelected = "none";
+    String colorSelected = "none";
+    String imageTypeSelected = "none";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,7 @@ public class ConfigurationActivity extends Activity implements Serializable {
 
 
                 imageSizeSelected = adapterView.getItemAtPosition(i).toString();
+                imageSize.setSelection(i);
 
             }
 
@@ -69,6 +70,7 @@ public class ConfigurationActivity extends Activity implements Serializable {
 
 
                 colorSelected = adapterView.getItemAtPosition(i).toString();
+                colorFilter.setSelection(i);
 
             }
 
@@ -88,7 +90,7 @@ public class ConfigurationActivity extends Activity implements Serializable {
 
 
                 imageTypeSelected = adapterView.getItemAtPosition(i).toString();
-
+                imageType.setSelection(i);
             }
 
             @Override
